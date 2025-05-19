@@ -16,23 +16,20 @@ int main(){
 	
 	cont--;
 	int numeroInvertido[cont];
-	
-	printf("Numero invertido: \n");
 
 	for(int i=cont;i>=0;i--){
 		int j = cont-i;
 		numeroInvertido[j]=numeroDigitado[i];
-		printf(" %d",numeroInvertido[j]);
 	}
 	
 	for(int i=cont;i>=0;i--){
-		int j = cont-i;
-		if(numeroDigitado[i]==numeroInvertido[j]){
-			printf("PALINDROMO");
-		} else {
-			printf("É NADA");
+		if(numeroDigitado[i]!=numeroInvertido[i]){
+			printf("EH NADA");
+			return 0;
 		}
-	}
+	} 
+	
+	printf("EH PALINDROMO!");
 	
 	
 	
