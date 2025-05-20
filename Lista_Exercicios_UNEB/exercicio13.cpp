@@ -28,6 +28,8 @@ int main() {
 		min = seg/60;
 		seg = 0;
 	}
-}
+
 
 printf("massa inicial: %.2f\nmassa final: %.2f", massaInicial, massaFinal);
+
+}
