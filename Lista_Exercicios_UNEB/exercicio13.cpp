@@ -2,15 +2,18 @@
 
 int main() {
     
-    float massa;
+    float massaInicial, massaFinal;
     int seg=0, min=0, horas=0;
     
     printf("Digite a massa inicial (em gramas): ");
-    scanf("%f",&massa);
+    scanf("%f",&massaInicial);
+
+    massaFinal=massaInicial;
     
     
-    while(massa>=0.5){
-    	massa=massa/2;
+
+    while(massaFinal>=0.5){
+    	massaFinal=massaFinal/2;
     	
     	seg+=50;	
 	}
@@ -26,3 +29,5 @@ int main() {
 		seg = 0;
 	}
 }
+
+printf("massa inicial: %.2f\nmassa final: %.2f", massaInicial, massaFinal);
