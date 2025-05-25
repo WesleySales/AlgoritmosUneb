@@ -1,34 +1,27 @@
 #include <stdio.h>
+#include <string.h>
 #include <math.h>
 
 int main()
 {
     int decimal=0;
-    int binario[50];
-    int dig;
-    int termos=0;
+    char binario[50];
     
     printf("CONVERSOR BINARIO -> DECIMAL\n");
     printf("Digite o numero binario: ");
+    scanf("%s", binario);
     
-    while(dig==1 || dig==0){
-	    scanf("%d", &dig);    	
-		binario[termos] = dig;
-		
-    	if(dig==1 || dig==0) termos++;
-    	
-    	printf("termos: %d\n\n", termos);
-	}
-	
-	termos--;
-	
-    for(int i=0;i<=termos;i++){
-    	printf(" %d", binario[i]);
-//    	int res = (binario[i] * powl(2,termos-i));
-//    	printf("calc: %d * %d ^ %d = %d\n",binario[i], 2,termos-i,res);
-    	decimal += binario[i] * powl(2,termos-i);
+    int tamanho = strlen(binario);
+    tamanho--;
+    
+    for(int i=0;i<=tamanho;i++){
+    	if(binario[i]!='1' && binario[i]!='0'){
+    		printf("Termo invalido, o numero binario so aceita '0' e '1'.");
+    		return 0;
+   		} else if (binario[i]=='1'){
+    		decimal += powl(2,tamanho-i);
+		}
 	}
     
     printf("\n\nO decimal eh: %d", decimal);
-    
 }
