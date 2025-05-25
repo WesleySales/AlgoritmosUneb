@@ -19,6 +19,7 @@ int main() {
 	}
 	
 	printf("\nsegundos %d\n", seg); 
+	printf("\nmassa inicial: %.2f\nmassa final: %.2f\n", massaInicial, massaFinal);
 	
 	if(seg % 60 != 0){
 		min = seg/60;
@@ -30,6 +31,5 @@ int main() {
 	}
 
 
-printf("massa inicial: %.2f\nmassa final: %.2f", massaInicial, massaFinal);
 
 }
