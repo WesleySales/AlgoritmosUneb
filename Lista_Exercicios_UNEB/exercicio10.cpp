@@ -2,36 +2,28 @@
 
 int main(){
 	
-	int dig, numeroDigitado[50], cont=0;
+	int numAnterior, numAtual;
+	int seqAtual=0, seqMaior;
 	
-	printf("Digite um numero maior que 10 (um digito por vez): \n");
-	
-	do{
-		scanf("%d", &dig);
-		if(dig>=0){
-			numeroDigitado[cont] = dig;
-			cont++;	
+	while(numAtual>=0){
+		printf("Digite um numero: \n\n");
+		scanf("%d", &numAtual);
+		
+		if(numAtual>numAnterior){
+			seqAtual++;
+			printf("O numero atual (%d) eh MAIOR que o antecessor (%d): sequencia atualizada: %d",numAtual, numAnterior,seqAtual);
 		}
-	} while(dig!=-1);
-	
-	cont--;
-	int numeroInvertido[cont];
-
-	for(int i=cont;i>=0;i--){
-		int j = cont-i;
-		numeroInvertido[j]=numeroDigitado[i];
+		else if(numAtual>0){
+			seqMaior = seqAtual;
+			seqAtual=1;
+			printf("O numero atual (%d) eh MENOR que o antecessor (%d): sequencia atualizada: %d",numAtual, numAnterior,seqAtual);
+		}		
+		
+		numAnterior = numAtual;
+		
+		printf("\n\nDigite '-1' para encerrar!\n\n");
 	}
-	
-	for(int i=cont;i>=0;i--){
-		if(numeroDigitado[i]!=numeroInvertido[i]){
-			printf("EH NADA");
-			return 0;
-		}
-	} 
-	
-	printf("EH PALINDROMO!");
-	
-	
-	
-	
+	if(seqAtual>seqMaior) seqMaior=seqAtual;
+//	seq = seq>seqMaior? seq:seqMaior;
+	printf("A maior sequencia crescente foi %d",seqMaior);
 }
