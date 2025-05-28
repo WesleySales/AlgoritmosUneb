@@ -24,11 +24,12 @@ int main() {
 	if(seg % 60 != 0){
 		min = seg/60;
 		seg = seg-min*60;		
-		printf("%d horas, %d minutos e %d segundos",horas,min,seg);
 	} else {
 		min = seg/60;
 		seg = 0;
 	}
+
+printf("%d horas, %d minutos e %d segundos",horas,min,seg);
 
 
 
