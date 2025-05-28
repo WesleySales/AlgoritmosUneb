@@ -2,9 +2,9 @@
 
 int main(){
 	
-	char nome[15][50];
+	char nome[50][50];
 	float altura[50];
-	char sexo[1][50];
+	char sexo[50];
 	
 	float maiorAltura =0, menorAltura=3;
 	
@@ -14,14 +14,14 @@ int main(){
 	
 	for(int i=0;i<50;i++){
 		printf("\nDigite o nome: ");
-		scanf("%s", &nome[1][i]);
+		scanf("%s", &nome[i]);
 		
 		scanf("");
 		
 		printf("Digite a altura: ");
 		scanf("%f",&altura[i]);
 		printf("Digite o sexo: 'M' ou 'F': ");
-		scanf(" %c", &sexo[1][i]);
+		scanf(" %c", &sexo[i]);
 	}
 	
 	for(int i=0;i<50;i++){
@@ -30,7 +30,7 @@ int main(){
 		somaAlturaTurma+=altura[i];
 		
 		//Logica para somar a altura das mulheres da turma
-		if(sexo[1][i]=='F'){
+		if(sexo[i]=='F'){
 			somaAlturaMulheres+= altura[i]; 
 			contadorMulheres++; //atualiza o contador de mulheres na turma, será importante para a media de altura das mulheres
 		}
