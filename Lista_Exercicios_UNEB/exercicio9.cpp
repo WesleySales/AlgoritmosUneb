@@ -1,5 +1,7 @@
 #include <stdio.h>
 
+
+
 int main(){
 	
 	char nome[50][50];
@@ -14,9 +16,7 @@ int main(){
 	
 	for(int i=0;i<50;i++){
 		printf("\nDigite o nome: ");
-		scanf("%s", &nome[i]);
-		
-		scanf("");
+		scanf(" %s", nome[i]);
 		
 		printf("Digite a altura: ");
 		scanf("%f",&altura[i]);
